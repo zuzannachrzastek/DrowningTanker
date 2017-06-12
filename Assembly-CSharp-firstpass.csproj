@@ -206,14 +206,14 @@
  <Reference Include="UnityEngine.VR">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
  </Reference>
- <Reference Include="M3D_DLL">
- <HintPath>D:/ZUZIA/studia/8 semestr/Teoria Gier Komputerowych/projekt/DrowningTanker/Assets/MORPH3D/Scripts/Plugins/M3D_DLL.dll</HintPath>
+ <Reference Include="ICSharpCode.SharpZipLib">
+ <HintPath>D:/ZUZIA/studia/8 semestr/Teoria Gier Komputerowych/projekt/DrowningTanker/Assets/MORPH3D/Scripts/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
  </Reference>
  <Reference Include="M3DIMPORT_DLL">
  <HintPath>D:/ZUZIA/studia/8 semestr/Teoria Gier Komputerowych/projekt/DrowningTanker/Assets/MORPH3D/Scripts/Plugins/M3DIMPORT_DLL.dll</HintPath>
  </Reference>
- <Reference Include="ICSharpCode.SharpZipLib">
- <HintPath>D:/ZUZIA/studia/8 semestr/Teoria Gier Komputerowych/projekt/DrowningTanker/Assets/MORPH3D/Scripts/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
+ <Reference Include="M3D_DLL">
+ <HintPath>D:/ZUZIA/studia/8 semestr/Teoria Gier Komputerowych/projekt/DrowningTanker/Assets/MORPH3D/Scripts/Plugins/M3D_DLL.dll</HintPath>
  </Reference>
  <Reference Include="MCS_Utilities">
  <HintPath>D:/ZUZIA/studia/8 semestr/Teoria Gier Komputerowych/projekt/DrowningTanker/Assets/MORPH3D/Scripts/Plugins/MCS_Utilities.dll</HintPath>
