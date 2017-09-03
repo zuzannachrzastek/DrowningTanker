@@ -31,7 +31,7 @@ public class WaterBuoyancy : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Dupa");
+        //Debug.Log("Dupa");
         //ContactPoint contact = collision.contacts[0];
         //if (contact.normal.y <= -0.6f)
         //{

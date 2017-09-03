@@ -55,8 +55,8 @@
      <Compile Include="Assets\MORPH3D\Vendor\Unity\Shaders\UniqueShadow\UniqueShadow.cs" />
      <Compile Include="Assets\MORPH3D\Vendor\Unity\Shaders\UniqueShadow\UniqueShadowSun.cs" />
      <Compile Include="Assets\Scripts\MCSAnimController.cs" />
-     <Compile Include="Assets\SwimmingBoat\Boat.cs" />
-     <Compile Include="Assets\SwimmingBoat\WaterBuoyancy.cs" />
+     <Compile Include="Assets\Scripts\SwimmingBoat\Boat.cs" />
+     <Compile Include="Assets\Scripts\SwimmingBoat\WaterBuoyancy.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
