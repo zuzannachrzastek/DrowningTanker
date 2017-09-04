@@ -23,7 +23,7 @@ public class WaterBuoyancy : MonoBehaviour {
 
     void FixedUpdate()
     {
-        var depth = Mathf.Max(0, transform.position.y - g0.transform.position.y+1);
+        var depth = Mathf.Max(0, transform.position.y - g0.transform.position.y+10);
         var f = Mathf.Min(depth * 5f, Mathf.Abs(Physics.gravity.y) * 3.5f);
         g0.AddForce( f * Vector3.up, ForceMode.Acceleration);
         _lastVelocity = g0.velocity;
