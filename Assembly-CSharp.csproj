@@ -62,8 +62,12 @@
      <Compile Include="Assets\MORPH3D\Vendor\Unity\Shaders\Hair\HairRenderer.cs" />
      <Compile Include="Assets\MORPH3D\Vendor\Unity\Shaders\UniqueShadow\UniqueShadow.cs" />
      <Compile Include="Assets\MORPH3D\Vendor\Unity\Shaders\UniqueShadow\UniqueShadowSun.cs" />
+<<<<<<< HEAD
      <Compile Include="Assets\Scripts\Invantory.cs" />
      <Compile Include="Assets\Scripts\InvantoryItemLogic.cs" />
+=======
+     <Compile Include="Assets\MainMenu.cs" />
+>>>>>>> 5223546a80f20b9217cc497410a80c969bbf50e1
      <Compile Include="Assets\Scripts\MCSAnimController.cs" />
      <Compile Include="Assets\Scripts\SwimmingBoat\Boat.cs" />
      <Compile Include="Assets\Scripts\SwimmingBoat\WaterBuoyancy.cs" />
