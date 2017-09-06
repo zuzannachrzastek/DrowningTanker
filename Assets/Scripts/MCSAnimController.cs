@@ -16,13 +16,13 @@ public class MCSAnimController : MonoBehaviour {
         animator = GetComponent<Animator>();
         walking = 0.0f;
         turning = 0.0f;
-	}
+    }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () {  
         walking = Input.GetAxis("Vertical");
         animator.SetFloat("walking", walking);
         turning = Input.GetAxis("Horizontal");
-        transform.Rotate(new Vector3(0.0f, turnSpeed * turning * Time.deltaTime));
+        transform.Rotate(new Vector3(0.0f, turnSpeed * turning * Time.deltaTime));        
 	}
 }
