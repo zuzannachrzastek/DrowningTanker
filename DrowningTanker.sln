@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrowningTanker", "Assembly-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrowningTanker", "Assembly-CSharp.csproj", "{31DAE6AB-6FC8-EF4E-8C86-B22BEED4FD6F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrowningTanker", "Assembly-CSharp-Editor-firstpass.csproj", "{947AB384-08A2-7E88-3750-24F52112FE44}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrowningTanker", "Assembly-CSharp-Editor.csproj", "{347BF30D-D2B0-362C-9A92-D60D2FD69332}"
 EndProject
 Global
@@ -21,6 +23,10 @@ Global
 		{31DAE6AB-6FC8-EF4E-8C86-B22BEED4FD6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31DAE6AB-6FC8-EF4E-8C86-B22BEED4FD6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31DAE6AB-6FC8-EF4E-8C86-B22BEED4FD6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{947AB384-08A2-7E88-3750-24F52112FE44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{947AB384-08A2-7E88-3750-24F52112FE44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{947AB384-08A2-7E88-3750-24F52112FE44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{947AB384-08A2-7E88-3750-24F52112FE44}.Release|Any CPU.Build.0 = Release|Any CPU
 		{347BF30D-D2B0-362C-9A92-D60D2FD69332}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{347BF30D-D2B0-362C-9A92-D60D2FD69332}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{347BF30D-D2B0-362C-9A92-D60D2FD69332}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -26,7 +26,7 @@ public class Invantory : MonoBehaviour
     [Tooltip("Resets the entire invantory system to have 0 items picked up. This is useful for testing in editor and for restarting each game")]
     public bool resetInvantoryOnStart = true;
     private Transform playerTransform;
-    private List<InvantoryObject> objectsInInvantory;
+    public List<InvantoryObject> objectsInInvantory;
     private List<GameObject> invantorySlots;
     [Tooltip("Should be set, leave me alone please")]public GameObject invantoryRoot;
     private GameObject invantoryObjectTemplate;
