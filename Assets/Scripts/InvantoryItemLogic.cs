@@ -34,7 +34,7 @@ public class InvantoryItemLogic
         {
             case LogicType.Spawn:
                 Debug.Log(tf.position.y);
-                Object.Instantiate(invantoryObject.objectPrefab, tf.position, Quaternion.identity).transform.Translate(new Vector3(0, 30, 0));
+                Object.Instantiate(invantoryObject.objectPrefab, tf.position, Quaternion.identity).transform.Translate(new Vector3(0, 2, 1));
                 break;
             case LogicType.Other:
                 invantoryObject.objectPrefab.GetComponent<RuntimeInvantoryLogic>().Use(tf.gameObject);
