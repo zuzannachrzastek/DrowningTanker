@@ -8,6 +8,7 @@ public class Detection : MonoBehaviour
     public float Reach = 4.0F;
     [HideInInspector] public bool InReach;
     public string Character = "e";
+    public InvantoryObject RequiredItem; 
 
     // UI SETTINGS
     [Header("UI Settings")]
@@ -74,7 +75,10 @@ public class Detection : MonoBehaviour
                 // Give the object that was hit the name 'Door'
                 Door = hit.transform.gameObject;;
                 g0 = gameObject;
-                if (!gameObject.GetComponent<DoorKey>())
+                Invantory inv = gameObject.GetComponent<Invantory>();
+                
+
+                if (!inv.objectsInInvantory.Contains(RequiredItem))
                 {
                     Debug.Log("nie masz klucza");
                     return;
