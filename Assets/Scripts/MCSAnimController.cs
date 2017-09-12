@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MCSAnimController : MonoBehaviour {
 
+    // Zuzanna Chrzastek and Maciej Makowka, 2017
+
     private Animator animator;
     private float walking;
     private float turning;

@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
+    // Zuzanna Chrzastek and Maciej Makowka, 2017
+
     public string gameplayLevelName;
     public Button newGameButton;
     public Button quitButton;

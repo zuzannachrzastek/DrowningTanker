@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+
+    // Modified by Zuzanna Chrzastek and Maciej Makowka, 2017
+
     // INSPECTOR SETTINGS
     [Header("Rotation Settings")]
     [Tooltip("The initial angle of the door/window.")]
