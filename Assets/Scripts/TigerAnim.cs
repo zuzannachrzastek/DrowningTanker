@@ -13,6 +13,9 @@ public class TigerAnim : MonoBehaviour {
     public String animatorStateNameForWalk = "walk";
     [Tooltip("Locking the tiger rotation. This prevents tiger from falling in X and Z axis. Default is true - enabled protection.")]
     public bool lockRotationXZ = true;
+    
+    public GameObject aim;
+    public bool runToAim = false;
 
     private Animator animator;
     private float walking;
@@ -28,6 +31,7 @@ public class TigerAnim : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
         float walking = animator.GetFloat("walking");
         animatorState = animator.GetCurrentAnimatorStateInfo(0);
         if (animatorState.IsName(animatorStateNameForWalk))
@@ -53,6 +57,34 @@ public class TigerAnim : MonoBehaviour {
                 eulerAngles = new Vector3(0, eulerAngles.y, 0);
                 transform.rotation = Quaternion.Euler(eulerAngles);
             }
+        }
+
+        if (runToAim)
+        {
+            Vector3 aimPosition = aim.transform.position;
+            float dist = Vector3.Distance(aimPosition, gameObject.transform.position);
+
+            //double rad = Math.Atan(Math.Abs(Math.Abs(aimPosition.x) - Math.Abs(transform.position.x)) / dist);
+            //float degree = Convert.ToSingle(rad * 180 / Math.PI);
+            //Debug.Log(degree);
+            //Vector3 eulerAngles = transform.rotation.eulerAngles;
+            //eulerAngles = new Vector3(eulerAngles.x, degree, eulerAngles.z);
+            //transform.rotation = Quaternion.Euler(eulerAngles);
+            Vector3 direction = aimPosition - transform.position;
+            Quaternion rotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, 10 * stepLenght * Time.deltaTime);
+
+            if (dist > 1.20)
+            {
+                float step = stepLenght * Time.deltaTime;               
+                transform.position = Vector3.MoveTowards(transform.position, aimPosition, step);
+                animator.SetFloat(animatorStateNameForWalk, 0.8f);
+            } else
+            {
+                animator.SetFloat(animatorStateNameForWalk, 0.0f);
+            }
+
+
         }
    
 	}

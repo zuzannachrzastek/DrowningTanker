@@ -23,11 +23,12 @@ public class TigerMove : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if(transform.position.equals(positionB))
+      /*  if(transform.position.equals(positionB))
         {
             walking = -1;
             animator.SetFloat("walking", walking);
         }
+        */
         //float walking = animator.GetFloat("walking");
         walking = 1;
         animator.SetFloat("walking", walking);
