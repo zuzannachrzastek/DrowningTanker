@@ -30,6 +30,7 @@ public class Detection : MonoBehaviour
     public float Opacity = 1.0F;
 
     public GameObject Door;
+    [Tooltip("The object required in bag to do the action.")]
     public GameObject g0;
 
     void Start()
@@ -43,6 +44,7 @@ public class Detection : MonoBehaviour
         {
             CrosshairPrefabInstance = Instantiate(CrosshairPrefab); // Display the crosshair prefab
             CrosshairPrefabInstance.transform.SetParent(transform, true); // Make the player the parent object of the crosshair prefab
+            CrosshairPrefabInstance.transform.Translate(new Vector3(0, 250, 5));
         }
 
         if (TextPrefab == null) Debug.Log("<color=yellow><b>No TextPrefab was found.</b></color>"); // Return an error if no text element was specified
@@ -80,21 +82,24 @@ public class Detection : MonoBehaviour
 
                 if (!inv.objectsInInvantory.Contains(RequiredItem))
                 {
-                    Debug.Log("nie masz klucza");
                     return;
                 }
 
                 // Get access to the 'Door' script attached to the object that was hit
                 Door dooropening = Door.GetComponent<Door>();
-                Debug.Log(Door);
 
                 if (Input.GetKey(Character))
                 {
                     // Open/close the door by running the 'Open' function found in the 'Door' script
                     if (dooropening.RotationPending == false)
+                    {
                         StartCoroutine(hit.collider
                             .GetComponent<Door>()
                             .Move());
+                        StartCoroutine(hit.collider
+                            .GetComponent<Door>()
+                            .DoPlayerWinning());
+                    }
                 }
             }
 

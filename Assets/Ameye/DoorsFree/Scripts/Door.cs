@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
@@ -18,6 +19,10 @@ public class Door : MonoBehaviour
     public float Speed = 3F;
     [Tooltip("0 = infinite times")]
     public int TimesMoveable = 0;
+    [Tooltip("The image or text that will be shown when player win the level.")]
+    public GameObject TextPrefab; 
+    [Tooltip("Next level scene name. Next level means the level after winning this level.")]
+    public string nextLevelSceneName = "";
 
 
     public enum TypeOfHinge { Centered, CorrectlyPositioned }
@@ -31,6 +36,8 @@ public class Door : MonoBehaviour
     // PRIVATE SETTINGS - NOT VISIBLE FOR THE USER
     int TimesRotated = 0;
     [HideInInspector] public bool RotationPending = false; // Needs to be public because Detection.cs has to access it
+    [HideInInspector] public bool TextActive;
+    [HideInInspector] public GameObject TextPrefabInstance; // A copy of the text prefab to prevent data corruption
 
     // DEBUG SETTINGS
     [Header("Debug Settings")]
@@ -143,6 +150,8 @@ public class Door : MonoBehaviour
                 cube.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
                 cube.GetComponent<Renderer>().material.color = HingeColor;
             }
+
+            if (TextPrefab == null) Debug.Log("<color=yellow><b>No TextPrefab was found.</b></color>"); // Return an error if no text element was specified
         }
     }
 
@@ -207,5 +216,28 @@ public class Door : MonoBehaviour
                 else TimesRotated++;
             }
         }
+
+        DoPlayerWinning();
+
     }
+
+    // WIN FUNCTION
+    public IEnumerator DoPlayerWinning()
+    {
+        Debug.Log("debugggg");
+        // show winning text;
+        // Display the UI element when the player is in reach of the door
+        if (TextPrefab != null)
+        {
+            TextPrefabInstance = Instantiate(TextPrefab);
+            TextPrefabInstance.transform.SetParent(transform, true); // Make the player the parent object of the text element
+        }
+
+        //wait few seconds
+        yield return new WaitForSeconds(5);
+        
+        // goto next level;
+        SceneManager.LoadScene(nextLevelSceneName);
+    }
+
 }
