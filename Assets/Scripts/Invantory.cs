@@ -67,9 +67,7 @@ public class Invantory : MonoBehaviour
             ToggleSlot(true);
         if (Input.GetAxis("Mouse ScrollWheel") < 0)
             ToggleSlot(false);
-
-        if (Input.GetButtonDown("Submit"))
-            UseSelectedItem();
+        
         GetPlayerTransform();
         
     }
