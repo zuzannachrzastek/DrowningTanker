@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class Detection : MonoBehaviour
 {
+
+    //  Zuzanna Chrzastek and Maciej Makowka, 2017
+
     // GENERAL SETTINGS
     [Header("General Settings")]
     [Tooltip("How close the player has to be in order to be able to open/close the door.")]

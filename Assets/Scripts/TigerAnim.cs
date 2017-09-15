@@ -9,14 +9,15 @@ public class TigerAnim : MonoBehaviour {
 
     [Tooltip("The tiger step length.")]
     public float stepLenght = 0.01f;
-    [Tooltip("The state name for tiger walking. Name could be got from the tiger Animator screen. Default name is `walk`")]
-    public String animatorStateNameForWalk = "walk";
+    [Tooltip("The state name for tiger walking. Name could be got from the tiger Animator screen. Default name is `walking`")]
+    public String animatorStateNameForWalk = "walking";
     [Tooltip("Locking the tiger rotation. This prevents tiger from falling in X and Z axis. Default is true - enabled protection.")]
     public bool lockRotationXZ = true;
     
-    public GameObject aim;
+    public string aimTag;    
     public bool runToAim = false;
 
+    private GameObject aim;
     private Animator animator;
     private float walking;
     private AnimatorStateInfo animatorState;
@@ -61,30 +62,29 @@ public class TigerAnim : MonoBehaviour {
 
         if (runToAim)
         {
-            Vector3 aimPosition = aim.transform.position;
-            float dist = Vector3.Distance(aimPosition, gameObject.transform.position);
+            aim = GameObject.FindGameObjectWithTag(aimTag);
 
-            //double rad = Math.Atan(Math.Abs(Math.Abs(aimPosition.x) - Math.Abs(transform.position.x)) / dist);
-            //float degree = Convert.ToSingle(rad * 180 / Math.PI);
-            //Debug.Log(degree);
-            //Vector3 eulerAngles = transform.rotation.eulerAngles;
-            //eulerAngles = new Vector3(eulerAngles.x, degree, eulerAngles.z);
-            //transform.rotation = Quaternion.Euler(eulerAngles);
-            Vector3 direction = aimPosition - transform.position;
-            Quaternion rotation = Quaternion.LookRotation(direction);
-            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, 10 * stepLenght * Time.deltaTime);
+            if (aim != null)
+            {
+                Vector3 aimPosition = aim.transform.position;
+                float dist = Vector3.Distance(aimPosition, gameObject.transform.position);
 
-            if (dist > 1.20)
-            {
-                float step = stepLenght * Time.deltaTime;               
-                transform.position = Vector3.MoveTowards(transform.position, aimPosition, step);
-                animator.SetFloat(animatorStateNameForWalk, 0.8f);
-            } else
-            {
-                animator.SetFloat(animatorStateNameForWalk, 0.0f);
+
+                Vector3 direction = aimPosition - transform.position;
+                Quaternion rotation = Quaternion.LookRotation(direction);
+                transform.rotation = Quaternion.Lerp(transform.rotation, rotation, 10 * stepLenght * Time.deltaTime);
+
+                if (dist > 1.20)
+                {
+                    float step = stepLenght * Time.deltaTime;
+                    transform.position = Vector3.MoveTowards(transform.position, aimPosition, step);
+                    animator.SetFloat(animatorStateNameForWalk, 0.8f);
+                }
+                else
+                {
+                    animator.SetFloat(animatorStateNameForWalk, 0.0f);
+                }
             }
-
-
         }
    
 	}

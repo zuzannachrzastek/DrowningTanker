@@ -78,6 +78,11 @@
      <Compile Include="Assets\Scripts\SwimmingBoat\WaterBuoyancy.cs" />
      <Compile Include="Assets\Scripts\TigerAnim.cs" />
      <Compile Include="Assets\TigerMove.cs" />
+     <Compile Include="Assets\TimelineHourglass\Scripts\DummyControlUnit.cs" />
+     <Compile Include="Assets\TimelineHourglass\Scripts\Fireplace.cs" />
+     <Compile Include="Assets\TimelineHourglass\Scripts\Icon.cs" />
+     <Compile Include="Assets\TimelineHourglass\Scripts\Timeline.cs" />
+     <Compile Include="Assets\TimelineHourglass\Scripts\TimelineEvent.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />

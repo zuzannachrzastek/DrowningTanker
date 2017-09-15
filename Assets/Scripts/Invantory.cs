@@ -15,6 +15,8 @@ limitations under the License.
 
 */
 
+// Modified by Zuzanna Chrzastek and Maciej Makowka, 2017
+
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -23,6 +25,10 @@ using UnityEngine.EventSystems;
 
 public class Invantory : MonoBehaviour
 {
+
+    // Modified by Zuzanna Chrzastek and Maciej Makowka, 2017
+
+
     [Tooltip("Resets the entire invantory system to have 0 items picked up. This is useful for testing in editor and for restarting each game")]
     public bool resetInvantoryOnStart = true;
     private Transform playerTransform;
