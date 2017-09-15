@@ -14,8 +14,11 @@ public class TigerAnim : MonoBehaviour {
     [Tooltip("Locking the tiger rotation. This prevents tiger from falling in X and Z axis. Default is true - enabled protection.")]
     public bool lockRotationXZ = true;
     
-    public string aimTag;    
-    public bool runToAim = false;
+    public string aimTag;
+    [Tooltip("Animator state name for runToAim action.")]
+    public string runToAimName = "runToAim";
+
+    private bool runToAim = false;
 
     private GameObject aim;
     private Animator animator;
@@ -59,7 +62,7 @@ public class TigerAnim : MonoBehaviour {
                 transform.rotation = Quaternion.Euler(eulerAngles);
             }
         }
-
+        runToAim = animator.GetBool(runToAimName);
         if (runToAim)
         {
             aim = GameObject.FindGameObjectWithTag(aimTag);
@@ -74,7 +77,7 @@ public class TigerAnim : MonoBehaviour {
                 Quaternion rotation = Quaternion.LookRotation(direction);
                 transform.rotation = Quaternion.Lerp(transform.rotation, rotation, 10 * stepLenght * Time.deltaTime);
 
-                if (dist > 1.20)
+                if (dist > 1.30)
                 {
                     float step = stepLenght * Time.deltaTime;
                     transform.position = Vector3.MoveTowards(transform.position, aimPosition, step);
